@@ -1,0 +1,24 @@
+# THIS FILE STORES ALL CONFIGURATIONS 
+# DO NOT CHANGE WITHOUT PROPER KNOWLEDGE
+
+user_name: youremailhere@email.com
+device_authentication_code: auth_code_here
+
+use: tls
+
+
+# specify full path if not in current working directory
+
+
+pull_data_from: database.db
+
+defaults: yes
+  compose: compose.txt
+  use_engine: text_to_html.py
+  html: compose.html
+  assets: /assets
+
+
+customize: no
+
+# CORRUPTION IN THIS FILE MAY LEAD TO UNINTENDED CONSEQUENCES
