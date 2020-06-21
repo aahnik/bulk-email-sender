@@ -6,6 +6,11 @@ WARNING: DO NOT CHANGE config.yaml WITHOUT PROPER KNOWLEDGE
 user_name: aahnikdaw@gmail.com
 auth_code: ~auth
 
+# do not use original password for running this program
+# use a DEVICE AUTHENTICATION CODE generated from GMAIL
+
+store your  device authentication code in: 
+---first line of auth.txt file in this current directory
 
 use: defaults
 
@@ -23,6 +28,5 @@ defaults:
 use_template: default
 
 # CORRUPTION IN THIS FILE MAY LEAD TO UNINTENDED CONSEQUENCES
-
 
 # AAHNIK 2020 
