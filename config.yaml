@@ -1,16 +1,16 @@
 # THIS FILE STORES ALL CONFIGURATIONS 
-WARNING: DO NOT CHANGE config.yaml WITHOUT PROPER KNOWLEDGE
+# READ ONLY
+WARNING: DO NOT CHANGE ANYTHING config.yaml  THIS FILE IS MEANT TO BE WRITTEN ONLY BY PROGRAM
+info: TO CONFIGURE SETTINGS RUN THE setup.py file 
 
 # specify full path if not in current working directory
 
-user_name: aahnikdaw@gmail.com
-auth_code: ~auth
+user_name: AAHNIK DAW
+auth: ~auth
 
-# do not use original password for running this program
-# use a DEVICE AUTHENTICATION CODE generated from GMAIL
-
-store your  device authentication code in: 
----first line of auth.txt file in this current directory
+# INSIDE THE ~auth.txt file put the following !
+# sender's email i.e from email in first line
+# device authentication key / password in second line
 
 use: defaults
 
