@@ -1,12 +1,15 @@
 # THIS FILE STORES ALL CONFIGURATIONS 
-# DO NOT CHANGE WITHOUT PROPER KNOWLEDGE
+WARNING: DO NOT CHANGE config.yaml WITHOUT PROPER KNOWLEDGE
 
-user_name: youremailhere@gmail.com
-auth_code: auth_code_here
+# specify full path if not in current working directory
+
+user_name: aahnikdaw@gmail.com
+auth_code: ~auth
+
 
 use: defaults
 
-# specify full path if not in current working directory
+#############################################################
 
 pull_data_from: data.cs
 
