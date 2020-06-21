@@ -4,15 +4,11 @@
 user_name: youremailhere@gmail.com
 auth_code: auth_code_here
 
-
 use: defaults
-
 
 # specify full path if not in current working directory
 
-
 pull_data_from: data.cs
-
 
 defaults:
   compose: compose.txt
@@ -21,7 +17,9 @@ defaults:
   assets: /assets
   connection: tls
 
-
 use_template: default
 
 # CORRUPTION IN THIS FILE MAY LEAD TO UNINTENDED CONSEQUENCES
+
+
+# AAHNIK 2020 
