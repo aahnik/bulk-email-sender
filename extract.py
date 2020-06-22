@@ -2,8 +2,9 @@
 import yaml
 import smtplib
 
-
 configs = {}
+server = smtplib.SMTP('smtp.gmail.com: 587')
+server.starttls()
 
 
 def extract():
@@ -16,15 +17,14 @@ def extract():
 def checkConnection():
 
     flag = True
-    print("\n\nCHECKING CONNECTION...")
+    print("\n\nCHECKING CONNECTION...\n")
 
     with open('~auth.txt', 'r') as file:
         sender = file.readline()
         auth_code = file.readline()
 
     try:
-        server = smtplib.SMTP('smtp.gmail.com: 587')
-        server.starttls()
+        global server
         server.login(sender, auth_code)
 
     except Exception as e:
@@ -46,5 +46,6 @@ if __name__ == "__main__":
     print(configs)
     print("CONNECTION:", "\tSUCCESS" if checkConnection() == True else "\tFAILED")
     print('\n\n\n')
+
 
 # AAHNIK 2020

@@ -16,7 +16,7 @@ use: defaults
 
 #############################################################
 
-pull_data_from: data.cs
+pull_data_from: data.csv
 
 defaults:
   compose: compose.txt
