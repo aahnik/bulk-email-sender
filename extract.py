@@ -1,10 +1,10 @@
-# this function extracts data from config.yaml
-import yaml
 import smtplib
+import ssl
+import yaml
+
 
 configs = {}
-server = smtplib.SMTP('smtp.gmail.com: 587')
-server.starttls()
+smtp_server = "smtp.gmail.com"
 
 
 def extract():
@@ -14,18 +14,23 @@ def extract():
         configs = yaml.full_load(file)
 
 
+def read_creds():
+    with open('~auth.txt', 'r') as file:
+        sender = file.readline()
+        auth_code = file.readline()
+    return sender, auth_code
+
+
 def checkConnection():
 
     flag = True
     print("\n\nCHECKING CONNECTION...\n")
-
-    with open('~auth.txt', 'r') as file:
-        sender = file.readline()
-        auth_code = file.readline()
-
+    sender, auth_code = read_creds()
     try:
-        global server
-        server.login(sender, auth_code)
+        port = 465  # for SSL
+        con = ssl.create_default_context()
+        with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
+            server.login(sender, auth_code)
 
     except Exception as e:
         flag = False

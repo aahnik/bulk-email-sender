@@ -23,10 +23,10 @@ defaults:
   use_engine: text_to_html.py
   html: compose.html
   assets: /assets
-  connection: tls
 
 use_template: default
 
 # CORRUPTION IN THIS FILE MAY LEAD TO UNINTENDED CONSEQUENCES
+
 
 # AAHNIK 2020 
