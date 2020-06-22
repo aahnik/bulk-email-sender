@@ -1,4 +1,4 @@
-import extract as e
+import extract as e    # module written by AAHNIK 2020
 info = """# AAHNIK 2020
     RECOMMENDATIONS:
         do not use original password for running this program
