@@ -51,11 +51,11 @@ def make_original():
     with open('data.csv', 'w') as file:
         file.write('EMAIL,NAME')
     with open('compose.txt', 'w') as file:
-        file.write("""The first line is treated as SUBJECT automatically and is highlighted 
+        file.write("""The first line is  SUBJECT automatically and is highlighted BOLD
 
-                    Hey this is the body of the mail , above line must be EMPTY
+                Hey this is the body of the mail , above line must be EMPTY
                     
-                    SEE screenshot OF HOW THE EMAIL LOOKS TO THE RECIEVER
+                SEE screenshot OF HOW THE EMAIL LOOKS TO THE RECIEVER
 
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero in, suscipit maxime quod 
                 dolor cupiditate porro consequuntur, minima ipsa perferendis odit nemo sed expedita consequatu
