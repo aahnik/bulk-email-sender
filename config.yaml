@@ -6,7 +6,7 @@ info: TO CONFIGURE SETTINGS RUN THE setup.py file
 # specify full path if not in current working directory
 
 sender_name: AAHNIK DAW
-auth: ~auth
+auth: ~auth.txt
 
 # INSIDE THE ~auth.txt file put the following !
 # sender's email i.e from email in first line
