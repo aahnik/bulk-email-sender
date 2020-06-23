@@ -17,8 +17,8 @@ with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
         sent = True
         message = template.replace('receiver', receiver_address)
         message = message.replace('$name', receiver_name)
-        print(message)
-        input("PRESS ENTER TO SEND THIS MESSAGE ")
+        # print(message)
+        # input("PRESS ENTER TO SEND THIS MESSAGE ")
         try:
             server.sendmail(sender_address, receiver_address, message)
         except:
