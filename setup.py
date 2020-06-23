@@ -39,7 +39,6 @@ def run_setup():
         print("\nCONNECTED\n")
 
     else:
-        global sender
         sender = input("ENTER SENDER'S (your) GMAIL ID : ")
         auth_code = input("ENTER THE AUTHENTICATION CODE: ")
         with open('~auth.txt', 'w') as file:
