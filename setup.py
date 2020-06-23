@@ -5,7 +5,8 @@ info = """# AAHNIK 2020
     RECOMMENDATIONS:
         do not use original password for running this program
         use a DEVICE AUTHENTICATION CODE generated from GMAIL"""
-
+orginal = open('original.txt','r')
+string = orginal.read()
 
 def checkConnection():
 
@@ -51,26 +52,7 @@ def make_original():
     with open('data.csv', 'w') as file:
         file.write('EMAIL,NAME')
     with open('compose.txt', 'w') as file:
-        file.write("""The first line is  SUBJECT automatically and is highlighted BOLD
-
-                Hey this is the body of the mail , above line must be EMPTY
-                    
-                SEE screenshot OF HOW THE EMAIL LOOKS TO THE RECIEVER
-
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero in, suscipit maxime quod 
-                dolor cupiditate porro consequuntur, minima ipsa perferendis odit nemo sed expedita consequatu
-                placeat! Aspernatur blanditiis illum accusamus?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero in, suscipit maxime quod 
-                dolor cupiditate porro consequuntur, minima ipsa perferendis odit nemo sed expedita consequatu
-                placeat! Aspernatur blanditiis illum accusamus?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero in, suscipit maxime quod 
-                dolor cupiditate porro consequuntur, minima ipsa perferendis odit nemo sed expedita consequatu
-                placeat! Aspernatur blanditiis illum accusamus?
-
-
-
-                yours lovely
-                Aahnik 2020""")
+        file.write(string)
 
 
 run_setup()
