@@ -43,5 +43,4 @@ def data():
         for row in data_dict:
             yield row['EMAIL'], row['NAME']
 
-
 # AAHNIK 2020
