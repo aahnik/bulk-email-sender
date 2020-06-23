@@ -1,8 +1,6 @@
-sender's email address here
-auth_code
+sender's gmail address here
+auth_code here
 # AAHNIK 2020
     RECOMMENDATIONS:
         do not use original password for running this program
-        use a APP AUTHENTICATION CODE generated from GMAIL
-# this is a program written file
-# do not tamper
+        use a DEVICE AUTHENTICATION CODE generated from GMAIL
