@@ -1,7 +1,9 @@
 # Python 3.8.2 or above 
 # pip 20.1. or above
 # you must have the above installed in your system to run AutoMailer 
-# you can then go to terminal / command prompt and execute 
+# you can then go to terminal / command prompt 
+# navigate to the directory where AutoMailer is installed
+# and execute 
 # pip install -r requirements.txt
 # the aboive command will automatically install the following dependancies
 # only PyYaml is essential 
