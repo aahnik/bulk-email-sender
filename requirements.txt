@@ -5,7 +5,7 @@
 # navigate to the directory where AutoMailer is installed
 # and execute 
 # pip install -r requirements.txt
-# the aboive command will automatically install the following dependancies
+# the above command will automatically install the following dependancies
 # only PyYaml is essential 
 astroid==2.4.2
 isort==4.3.21
