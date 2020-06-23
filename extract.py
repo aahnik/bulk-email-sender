@@ -1,56 +1,40 @@
-import smtplib
-import ssl
+import csv
 import yaml
 
 
-configs = {}
-smtp_server = "smtp.gmail.com"
-
-
-def extract():
+def extract_configs():
 
     with open('config.yaml', 'r') as file:
-        global configs
         configs = yaml.full_load(file)
+    return configs
 
 
 def read_creds():
+
     with open('~auth.txt', 'r') as file:
         sender = file.readline()
         auth_code = file.readline()
     return sender, auth_code
 
 
-def checkConnection():
+def data():
 
-    flag = True
-    print("\n\nCHECKING CONNECTION...\n")
-    sender, auth_code = read_creds()
-    try:
-        port = 465  # for SSL
-        con = ssl.create_default_context()
-        with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
-            server.login(sender, auth_code)
-
-    except Exception as e:
-        flag = False
-        error = str(e)
-        if ("Username and Password not accepted" in error):
-            print("\n   Incorrect Login Credentials :-( \n")
-        else:
-            print("\nSOME UNKNOWN ERROR OCCURED :-( SEE DETAILS BELOW \n\n", e)
-
-    finally:
-        return flag
+    with open('data.csv', 'r') as csv_file:
+        data_dict = csv.DictReader(csv_file)
+        for row in data_dict:
+            yield row['EMAIL'], row['NAME']
 
 
-if __name__ == "__main__":
+configs = extract_configs()
 
-    print('\n\n\n')
-    extract()
-    print(configs)
-    print("CONNECTION:", "\tSUCCESS" if checkConnection() == True else "\tFAILED")
-    print('\n\n\n')
+file = open('compose.txt', 'r')
+
+template = f"""\
+from: {configs['sender_name']}
+to: receiver
+subject: {file.readline()}
+
+{file.read()} """
 
 
 # AAHNIK 2020

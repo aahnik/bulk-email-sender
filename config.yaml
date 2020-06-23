@@ -5,7 +5,7 @@ info: TO CONFIGURE SETTINGS RUN THE setup.py file
 
 # specify full path if not in current working directory
 
-user_name: AAHNIK DAW
+sender_name: AAHNIK DAW
 auth: ~auth
 
 # INSIDE THE ~auth.txt file put the following !
