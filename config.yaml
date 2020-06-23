@@ -12,21 +12,17 @@ auth: ~auth
 # sender's email i.e from email in first line
 # device authentication key / password in second line
 
-use: defaults
+
 
 #############################################################
 
 pull_data_from: data.csv
 
-defaults:
-  compose: compose.txt
-  use_engine: text_to_html.py
-  html: compose.html
-  assets: /assets
+compose: compose.txt
 
-use_template: default
+html: compose.html
+
 
 # CORRUPTION IN THIS FILE MAY LEAD TO UNINTENDED CONSEQUENCES
-
 
 # AAHNIK 2020 

@@ -9,9 +9,28 @@ def extract_configs():
     return configs
 
 
+configs = extract_configs()
+
+sender_name = configs['sender_name']
+auth_file = configs['auth']
+data_file = configs['pull_data_from']
+compose_txt_file = configs['compose']
+html_file = configs['html']
+
+
+file = open(compose_txt_file, 'r')
+
+template = f"""\
+from: {sender_name}
+to: receiver
+subject: {file.readline()}
+
+{file.read()} """
+
+
 def read_creds():
 
-    with open('~auth.txt', 'r') as file:
+    with open(auth_file, 'r') as file:
         sender = file.readline()
         auth_code = file.readline()
     return sender, auth_code
@@ -19,22 +38,10 @@ def read_creds():
 
 def data():
 
-    with open('data.csv', 'r') as csv_file:
+    with open(data_file, 'r') as csv_file:
         data_dict = csv.DictReader(csv_file)
         for row in data_dict:
             yield row['EMAIL'], row['NAME']
-
-
-configs = extract_configs()
-
-file = open('compose.txt', 'r')
-
-template = f"""\
-from: {configs['sender_name']}
-to: receiver
-subject: {file.readline()}
-
-{file.read()} """
 
 
 # AAHNIK 2020

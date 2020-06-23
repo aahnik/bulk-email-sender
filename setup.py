@@ -41,7 +41,7 @@ def run_setup():
     else:
         sender = input("ENTER SENDER'S (your) GMAIL ID : ")
         auth_code = input("ENTER THE AUTHENTICATION CODE: ")
-        with open('~auth.txt', 'w') as file:
+        with open(extract.auth_file, 'w') as file:
             file.write(f"{sender}\n{auth_code}\n{info}")
         run_setup()
 
