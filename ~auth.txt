@@ -1,0 +1,8 @@
+sender's email address here
+auth_code
+# AAHNIK 2020
+    RECOMMENDATIONS:
+        do not use original password for running this program
+        use a APP AUTHENTICATION CODE generated from GMAIL
+# this is a program written file
+# do not tamper
