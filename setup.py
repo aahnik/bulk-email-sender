@@ -5,8 +5,7 @@ info = """# AAHNIK 2020
     RECOMMENDATIONS:
         do not use original password for running this program
         use a DEVICE AUTHENTICATION CODE generated from GMAIL"""
-orginal = open('original.txt','r')
-string = orginal.read()
+
 
 def checkConnection():
 
@@ -46,13 +45,6 @@ def run_setup():
         with open('~auth.txt', 'w') as file:
             file.write(f"{sender}\n{auth_code}\n{info}")
         run_setup()
-
-
-def make_original():
-    with open('data.csv', 'w') as file:
-        file.write('EMAIL,NAME')
-    with open('compose.txt', 'w') as file:
-        file.write(string)
 
 
 run_setup()

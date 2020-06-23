@@ -15,5 +15,7 @@ with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
     server.login(sender, auth_code)
     for receiver, name in extract.data():
         message = template.replace('receiver', receiver)
+        message = message.replace('$name', name)
+        print(message)
+        input("PRESS ENTER TO SEND THIS MESSAGE ")
         server.sendmail(sender, receiver, message)
-setup.make_original()
