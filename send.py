@@ -10,12 +10,25 @@ port = 465  # for SSL
 con = ssl.create_default_context()
 
 template = extract.template
-
+count = 0
 with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
     server.login(sender_address, auth_code)
     for receiver_address, receiver_name in extract.data():
+        sent = True
         message = template.replace('receiver', receiver_address)
         message = message.replace('$name', receiver_name)
-        # print(message)
-        # input("PRESS ENTER TO SEND THIS MESSAGE ")
-        server.sendmail(sender_address, receiver_address, message)
+        print(message)
+        input("PRESS ENTER TO SEND THIS MESSAGE ")
+        try:
+            server.sendmail(sender_address, receiver_address, message)
+        except:
+            sent = False
+            print(
+                f"some error occured while sending email to {receiver_address} ")
+            input("PRESS ENTER TO CONTINUE")
+        finally:
+            if sent:
+                print(f"Successfully sent email to {receiver_address}")
+                count += 1
+            else:
+                print(f"Failed to  send email to {receiver_address}")
