@@ -22,7 +22,7 @@ placeat! **Aspernatur** blanditiis illum accusamus?
 ![ScreenShots](screenshot1.png)
 
 
-![ScreenShots]('/home/aahnik/Coding/PUBLIC/AutoMailer/screenshot2.png')
+![ScreenShots](screenshot2.png)
 
 *yours lovely*
 
