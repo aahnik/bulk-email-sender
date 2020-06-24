@@ -14,11 +14,11 @@ configs = extract_configs()
 sender_name = configs['sender_name']
 auth_file = configs['auth']
 data_file = configs['pull_data_from']
-compose_txt_file = configs['compose']
-html_file = configs['html']
+compose = configs['compose']
 
 
-file = open(compose_txt_file, 'r')
+
+file = open(compose, 'r')
 
 template = f"""\
 from: {sender_name}
