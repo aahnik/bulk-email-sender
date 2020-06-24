@@ -33,6 +33,7 @@ with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
 
         text = message
         html = markdown.markdown(text)
+        # print(html)
 
         part1 = MIMEText(text, "plain")
         part2 = MIMEText(html, "html")
