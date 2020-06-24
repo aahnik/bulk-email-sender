@@ -14,17 +14,11 @@ configs = extract_configs()
 sender_name = configs['sender_name']
 auth_file = configs['auth']
 data_file = configs['pull_data_from']
-compose = configs['compose']
+# compose = configs['compose']
 
 
-file = open(compose, 'r')
-
-template = f"""\
-from: {sender_name}
-to: receiver
-subject: {file.readline()}
-
-{file.read()} """
+with open('compose.md', 'r') as file:
+    template = file.read()
 
 
 def read_creds():

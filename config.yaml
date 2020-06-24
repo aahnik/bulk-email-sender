@@ -5,7 +5,7 @@ info: TO CONFIGURE SETTINGS RUN THE setup.py file
 
 # specify full path if not in current working directory
 
-sender_name: AAHNIK DAW # put your name to display or Company Name here
+sender_name: company name # put your name to display or Company Name here
 auth: ~auth.txt # default file where login credentials are stored
 
 # INSIDE THE ~auth.txt file put the following !
