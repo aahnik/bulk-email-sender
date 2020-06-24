@@ -17,7 +17,6 @@ data_file = configs['pull_data_from']
 compose = configs['compose']
 
 
-
 file = open(compose, 'r')
 
 template = f"""\

@@ -20,9 +20,13 @@ with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
         # message = template.replace('receiver', receiver_address)
         # message = message.replace('$name', receiver_name)
         message = MIMEMultipart("alternative")
-        message["Subject"] = "multipart test"
-        message["From"] = sender_address
-        message["To"] = receiver_email
+        message["Subject"] = extract.file.readline()
+        message["From"] = extract.sender_name
+        message["To"] = receiver_address
+
+        message_plain_text = extract.file.read()
+        message_html_file = markdown.markdown(message_plain_text)
+        
         # print(message)
         # input("PRESS ENTER TO SEND THIS MESSAGE ")
         # try:
