@@ -6,7 +6,9 @@ import markdown
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
+
 from email import encoders
+import os
 
 sender_address, auth_code = extract.read_creds()
 smtp_server = "smtp.gmail.com"
@@ -27,7 +29,7 @@ with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
 
         multipart_msg = MIMEMultipart("alternative")
 
-        multipart_msg["Subject"] = "Testing mime"
+        multipart_msg["Subject"] = message.splitlines()[0]
         multipart_msg["From"] = extract.sender_name
         multipart_msg["To"] = receiver_address
 
@@ -35,6 +37,9 @@ with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
 
         text = message
         html = markdown.markdown(text)
+        with open('compose.html', 'w+') as html_file:
+            html_file.write(html)
+
         # print(html)
 
         part1 = MIMEText(text, "plain")
@@ -43,18 +48,23 @@ with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
         multipart_msg.attach(part1)
         multipart_msg.attach(part2)
 
+        for filename in os.listdir('ATTACH'):
 
-       
+            entry = input(f"""TYPE IN yes AND PRESS ENTER IF YOU CONFIRM T0 ATTACH {filename} 
+            
+            
+                TO SKIP PRESS ENTER: """)
 
-        # filename = 'screenshot1.png'
-        # attachment = open(filename, "rb")
-        # attach_part = MIMEBase('application', 'octet-stream')
-        # attach_part.set_payload((attachment).read())
-        # encoders.encode_base64(attach_part)
-        # attach_part.add_header('Content-Disposition',
-        #                        f"attachment; filename= {filename}")
+            confirmed = True if entry == 'yes' else False
 
-        # multipart_msg.attach(attach_part)
+            if confirmed:
+                attachment = open(f'{os.getcwd()}/ATTACH/{filename}', "rb")
+                attach_part = MIMEBase('application', 'octet-stream')
+                attach_part.set_payload((attachment).read())
+                encoders.encode_base64(attach_part)
+                attach_part.add_header('Content-Disposition',
+                                       f"attachment; filename= {filename}")
+                multipart_msg.attach(attach_part)
 
         input("PRESS ENTER TO SEND THIS MESSAGE ")
         try:
