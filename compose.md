@@ -1,4 +1,4 @@
-# The first line is treated as SUBJECT automatically and is highlighted 
+The first line is treated as SUBJECT automatically and is highlighted 
 
 Hey $name this is the body of the mail
                     

@@ -43,15 +43,18 @@ with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
         multipart_msg.attach(part1)
         multipart_msg.attach(part2)
 
-        filename = 'screenshot1.png'
-        attachment = open(filename, "rb")
-        attach_part = MIMEBase('application', 'octet-stream')
-        attach_part.set_payload((attachment).read())
-        encoders.encode_base64(attach_part)
-        attach_part.add_header('Content-Disposition',
-                               f"attachment; filename= {filename}")
 
-        multipart_msg.attach(attach_part)
+       
+
+        # filename = 'screenshot1.png'
+        # attachment = open(filename, "rb")
+        # attach_part = MIMEBase('application', 'octet-stream')
+        # attach_part.set_payload((attachment).read())
+        # encoders.encode_base64(attach_part)
+        # attach_part.add_header('Content-Disposition',
+        #                        f"attachment; filename= {filename}")
+
+        # multipart_msg.attach(attach_part)
 
         input("PRESS ENTER TO SEND THIS MESSAGE ")
         try:
