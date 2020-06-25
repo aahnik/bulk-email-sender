@@ -5,6 +5,8 @@ import ssl
 import markdown
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+from email import encoders
 
 sender_address, auth_code = extract.read_creds()
 smtp_server = "smtp.gmail.com"
@@ -23,11 +25,11 @@ with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
         message = message.replace('$name', receiver_name)
         # print(message)
 
-        mime_msg_send = MIMEMultipart("alternative")
+        multipart_msg = MIMEMultipart("alternative")
 
-        mime_msg_send["Subject"] = "Testing mime"
-        mime_msg_send["From"] = extract.sender_name
-        mime_msg_send["To"] = receiver_address
+        multipart_msg["Subject"] = "Testing mime"
+        multipart_msg["From"] = extract.sender_name
+        multipart_msg["To"] = receiver_address
 
         # print("mime subject  from to  lines executed")
 
@@ -38,16 +40,23 @@ with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
         part1 = MIMEText(text, "plain")
         part2 = MIMEText(html, "html")
 
-        mime_msg_send.attach(part1)
-        mime_msg_send.attach(part2)
+        multipart_msg.attach(part1)
+        multipart_msg.attach(part2)
 
-        # print("part 1 and 2 attached")
+        filename = 'screenshot1.png'
+        attachment = open(filename, "rb")
+        attach_part = MIMEBase('application', 'octet-stream')
+        attach_part.set_payload((attachment).read())
+        encoders.encode_base64(attach_part)
+        attach_part.add_header('Content-Disposition',
+                               f"attachment; filename= {filename}")
 
-        # print(message)
+        multipart_msg.attach(attach_part)
+
         input("PRESS ENTER TO SEND THIS MESSAGE ")
         try:
             server.sendmail(sender_address, receiver_address,
-                            mime_msg_send.as_string())
+                            multipart_msg.as_string())
         except Exception as e:
             sent = False
             # print(
