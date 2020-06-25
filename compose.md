@@ -48,7 +48,6 @@ Aahnik 2020
 ![IT APPEARS GREAT ON THE GMAIL APP ON SMARTPHONES](sample_screenshots/phn_scrnsht1.jpg)
 
 ![IT OPENS NEAT AFTER CLICKING ON THE EMAIL ](sample_screenshots/phn_scrnsht2.jpg)
-![ THIS IS HOW THE BODY OF THE EMAIL LOOKS IN PHONE](sample_screenshots/phn_scrnsht3.jpg)
-![ATTACHMENTS APPEAR COOL IN SMARTPHONE TOO](sample_screenshots/phn_scrnsht4.jpg)
+![ THIS IS HOW THE BODY OF THE EMAIL LOOKS IN PHONE](sample_screenshots/phn_scrnsht3.jpg) ![ATTACHMENTS APPEAR COOL IN SMARTPHONE TOO](sample_screenshots/phn_scrnsht4.jpg)
 
 
