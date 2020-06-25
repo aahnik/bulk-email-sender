@@ -45,10 +45,10 @@ Aahnik 2020
 
 ![THIS IS How it looks like to the receiver after Clicking on the Email in Web Desktop Mode](sample_screenshots/pc_scrnsht2.png)
 ![All Attachments are securely and succesfully attached to the Email](sample_screenshots/pc_scrnsht3.png)
-![IT APPEARS GREAT ON THE GMAIL APP ON SMARTPHONES](sample_screenshots/phn_scrnsht1.jpg)
+![IT APPEARS GREAT ON THE GMAIL APP ON SMARTPHONES](sample_screenshots/phn_scrnsht1.png)
 
-![IT OPENS NEAT AFTER CLICKING ON THE EMAIL ](sample_screenshots/phn_scrnsht2.jpg)
-![ THIS IS HOW THE BODY OF THE EMAIL LOOKS IN PHONE](sample_screenshots/phn_scrnsht3.jpg) 
-![ATTACHMENTS APPEAR COOL IN SMARTPHONE TOO](sample_screenshots/phn_scrnsht4.jpg)
+![IT OPENS NEAT AFTER CLICKING ON THE EMAIL ](sample_screenshots/phn_scrnsht2.png)
+![ THIS IS HOW THE BODY OF THE EMAIL LOOKS IN PHONE](sample_screenshots/phn_scrnsht3.png) 
+![ATTACHMENTS APPEAR COOL IN SMARTPHONE TOO](sample_screenshots/phn_scrnsht4.png)
 
 
