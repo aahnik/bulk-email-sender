@@ -35,7 +35,10 @@ Aahnik 2020
 
 # SEE SAMPLE SCREENSHOTS
 
-![ THIS IS How it appears to receiver on Desktop Mode in Web](sample_screenshots/pc_scrnsht1.png/pc_scrnsht1.png)
+
+![THIS IS How it appears to receiver on Desktop Mode in Web](sample_screenshots/pc_scrnsht1.png/pc_scrnsht1.png)
+
+
 ##### EMAILS SENT THROUGH AUTOMAILER ARE ENCRYPTED AND THEY REACH THE PRIMARY INBOX OF RECEIPIENTS 
 
 ##### THEY _DO NOT_ END UP IN SPAM FOLDERS
