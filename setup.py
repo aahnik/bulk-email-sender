@@ -5,6 +5,9 @@ info = """# AAHNIK 2020
     RECOMMENDATIONS:
         do not use original password for running this program
         use a DEVICE AUTHENTICATION CODE generated from GMAIL"""
+auth_warning = """ ** DO NOT TAMPER WITH THIS FILE ~auth.txt
+    # MEANT TO BE READ AND WRITTEN ONLY BY PROGRAM
+    # CORRUPTION IN THIS FILE MAY LEAD TO UNINTENDED AND DANGEROUS ERRORS"""
 
 
 def checkConnection():
@@ -42,7 +45,7 @@ def run_setup():
         sender = input("ENTER SENDER'S (your) GMAIL ID : ")
         auth_code = input("ENTER THE AUTHENTICATION CODE: ")
         with open(extract.auth_file, 'w') as file:
-            file.write(f"{sender}\n{auth_code}\n{info}")
+            file.write(f"{sender}\n{auth_code}\n{info}\n{auth_warning}")
         run_setup()
 
 
