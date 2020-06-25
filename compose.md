@@ -40,7 +40,7 @@ Aahnik 2020
 
 ##### THEY _DO NOT_ END UP IN SPAM FOLDERS
 
-![THIS IS How it looks like to the receiver after Clicking on the Email in Web Desktop Mode]sample_screenshots/pc_scrnsht2.png(sample_screenshots/pc_scrnsht2.png)
+![THIS IS How it looks like to the receiver after Clicking on the Email in Web Desktop Mode](sample_screenshots/pc_scrnsht2.png)
 ![All Attachments are securely and succesfully attached to the Email](sample_screenshots/pc_scrnsht3.png)
 ![IT APPEARS GREAT ON THE GMAIL APP ON SMARTPHONES](sample_screenshots/phn_scrnsht1.jpg)
 
