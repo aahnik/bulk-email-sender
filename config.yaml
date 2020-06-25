@@ -5,8 +5,8 @@ info: TO CONFIGURE SETTINGS RUN THE setup.py file
 
 # specify full path if not in current working directory
 
-sender_name: AAHNIK DAW
-auth: ~auth.txt
+sender_name: company name # put your name to display or Company Name here
+auth: ~auth.txt # default file where login credentials are stored
 
 # INSIDE THE ~auth.txt file put the following !
 # sender's email i.e from email in first line
@@ -18,9 +18,17 @@ auth: ~auth.txt
 
 pull_data_from: data.csv
 
-compose: compose.txt
+compose: compose.md # compose your email in this file
 
-html: compose.html
+default_html: compose.html # html is automatically generated from the markdown 
+
+# custom_html: False  # by default the value is false, ie custom html is not used
+# this feature is currently not supported
+# if you want to use custom html set the value of custom_html to the name of html file
+# put your html file and all assets (CSS or IMAGES or FONTS) inside the AutoMailer Folder
+# All required files must be in current working directory ie AutoMailer Folder 
+
+
 
 
 # CORRUPTION IN THIS FILE MAY LEAD TO UNINTENDED CONSEQUENCES

@@ -1,2 +1,7 @@
 /__pycache__
 /.vscode
+/ATTACH
+makeorg.py
+~auth.txt
+compose.html
+tester.py
