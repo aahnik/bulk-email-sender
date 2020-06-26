@@ -1,5 +1,6 @@
 import csv
 import yaml
+import os
 
 
 def extract_configs():
@@ -35,5 +36,22 @@ def data():
         data_dict = csv.DictReader(csv_file)
         for row in data_dict:
             yield row['EMAIL'], row['NAME']
+
+
+def confirm_attachments():
+    attachments = []
+    filenames = []
+    for filename in os.listdir('ATTACH'):
+
+        entry = input(f"""TYPE IN 'Y' AND PRESS ENTER IF YOU CONFIRM T0 ATTACH {filename} 
+                                TO SKIP PRESS ENTER: """)
+        confirmed = True if entry == 'Y' else False
+        if confirmed:
+            filenames.append(filename)
+            attachment = open(f'{os.getcwd()}/ATTACH/{filename}', "rb")
+            attachments.append(attachment)
+
+    return filenames, attachments
+
 
 # AAHNIK 2020
