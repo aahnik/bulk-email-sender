@@ -13,7 +13,7 @@ def extract_configs():
 
 configs = extract_configs()
 
-sender_name = configs['sender_name']
+sender_name = creds.DISPLAY_NAME
 auth_file = configs['auth']
 data_file = configs['pull_data_from']
 # compose = configs['compose']
