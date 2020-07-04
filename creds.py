@@ -1,0 +1,5 @@
+DISPLAY_NAME = ''
+
+SENDER_EMAIL = ''
+
+PASSWORD = ''
