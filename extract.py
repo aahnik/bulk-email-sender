@@ -1,6 +1,7 @@
 import csv
 import yaml
 import os
+import creds
 
 
 def extract_configs():
@@ -23,11 +24,7 @@ with open('compose.md', 'r') as file:
 
 
 def read_creds():
-
-    with open(auth_file, 'r') as file:
-        sender = file.readline()
-        auth_code = file.readline()
-    return sender, auth_code
+    return creds.SENDER_EMAIL, creds.PASSWORD
 
 
 def data():

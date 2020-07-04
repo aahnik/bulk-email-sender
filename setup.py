@@ -1,6 +1,7 @@
 import extract   # module written by AAHNIK 2020
 import smtplib
 import ssl
+
 info = """# AAHNIK 2020
     RECOMMENDATIONS:
         do not use original password for running this program
@@ -42,11 +43,7 @@ def run_setup():
         print("\nCONNECTED\n")
 
     else:
-        sender = input("ENTER SENDER'S (your) GMAIL ID : ")
-        auth_code = input("ENTER THE AUTHENTICATION CODE: ")
-        with open(extract.auth_file, 'w') as file:
-            file.write(f"{sender}\n{auth_code}\n{info}\n{auth_warning}")
-        run_setup()
+        print("GO AND EDIT THE creds.py FILE PLEASE     oops!  your login credentials are incorrect ")
 
 
 run_setup()
