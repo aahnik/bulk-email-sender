@@ -25,8 +25,7 @@ def get_dynamic_from_template(csv_file_path, template):
             for header in headers:
                 value = row[header]
                 required_string = required_string.replace(f'${header}', value)
-            yield row['EMAIL'],required_string
-
+            yield row['EMAIL'], required_string
 
 
 def confirm_attachments():
