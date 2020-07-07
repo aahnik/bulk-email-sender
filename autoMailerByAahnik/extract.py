@@ -1,22 +1,8 @@
 import csv
-import yaml
 import os
 import creds
 
-
-def extract_configs():
-
-    with open('config.yaml', 'r') as file:
-        configs = yaml.full_load(file)
-    return configs
-
-
-configs = extract_configs()
-
 sender_name = creds.DISPLAY_NAME
-
-data_file = configs['pull_data_from']
-# compose = configs['compose']
 
 
 with open('compose.md', 'r') as file:
@@ -27,12 +13,20 @@ def read_creds():
     return creds.SENDER_EMAIL, creds.PASSWORD
 
 
-def data():
+def get_dynamic_from_template(csv_file_path, template):
+    with open(csv_file_path, 'r') as file:
+        headers = file.readline().split(',')
+        headers[len(headers) - 1] = headers[len(headers) - 1][:-1]
+    # i am opening the csv file two times above and below INTENTIONALLY, changing will cause error
+    with open(csv_file_path, 'r') as file:
+        data = csv.DictReader(file)
+        for row in data:
+            required_string = template
+            for header in headers:
+                value = row[header]
+                required_string = required_string.replace(f'${header}', value)
+            yield row['EMAIL'],required_string
 
-    with open(data_file, 'r') as csv_file:
-        data_dict = csv.DictReader(csv_file)
-        for row in data_dict:
-            yield row['EMAIL'], row['NAME']
 
 
 def confirm_attachments():

@@ -20,13 +20,10 @@ filenames, attachments = extract.confirm_attachments()
 count = 0
 with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
     server.login(sender_address, auth_code)
-    for receiver_address, receiver_name in extract.data():
+
+    for receiver_address, message in extract.get_dynamic_from_template('data.csv', template):
 
         sent = True
-        message = template.replace('receiver', receiver_address)
-
-        message = message.replace('$name', receiver_name)
-
         multipart_msg = MIMEMultipart("alternative")
 
         multipart_msg["Subject"] = message.splitlines()[0]
@@ -35,8 +32,8 @@ with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
 
         text = message
         html = markdown.markdown(text)
-        with open('compose.html', 'w+') as html_file:
-            html_file.write(html)
+        # with open('compose.html', 'w+') as html_file:
+        #     html_file.write(html)
 
         part1 = MIMEText(text, "plain")
         part2 = MIMEText(html, "html")

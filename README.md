@@ -1,7 +1,7 @@
 # AutoMailer
 Send Templatized Dynamic Emails Automatically 
 
-_Version: **Stable-1.1**_ 
+_Version: **Stable-2.0**_ 
 # SEE SAMPLE SCREENSHOTS
 
 
