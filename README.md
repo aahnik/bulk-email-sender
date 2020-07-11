@@ -6,7 +6,7 @@ Send Templatized Dynamic Emails Automatically
 
 _Version: **Stable-2.0**_ 
 
-[Click to see ScreenShots]( )
+[Click to see ScreenShots](https://github.com/aahnik/AutoMailer/blob/master/README.md#see-sample-screenshots)
 
 ## STEP WISE USAGE GUIDE
 1. Download or Clone the repo
