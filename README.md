@@ -27,7 +27,9 @@ _Version: **Stable-2.0**_
 
             DISCLAIMER: (just random example data)
             
-<script src="https://gist.github.com/aahnik/0c5e57cfe4aed98a14eb0953f8fd6dce.js"></script>
+
+![image of csv](csv_image.png)
+
 
 ..... you can add as many lines as you wish 
 
