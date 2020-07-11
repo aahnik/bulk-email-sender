@@ -1,5 +1,5 @@
 # AutoMailer
-Send Templatized Dynamic Emails Automatically 
+Send Templatized Dynamic Emails Automatically [See How](https://github.com/aahnik/AutoMailer#step-wise-usage-guide)
 1. **Send dynamic emails with unlimited variables pulling data from a database(csv file)**
 2. **Supports Markdown Formatting & embed links or images**
 3. **Supports Attaching any kind of files**
@@ -27,11 +27,7 @@ _Version: **Stable-2.0**_
 
             DISCLAIMER: (just random example data)
             
-> NAME,EMAIL,price,months
-
-> Ramesh Kumar,rmcskumar@example.fake,2345,8
-
-> Seeta Aggarwal,aaggarwal@example.fake,5000,10
+<script src="https://gist.github.com/aahnik/0c5e57cfe4aed98a14eb0953f8fd6dce.js"></script>
 
 ..... you can add as many lines as you wish 
 
