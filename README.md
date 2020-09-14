@@ -1,6 +1,10 @@
 # AutoMailer
 Send Templatized Dynamic Emails Automatically 
 
+[![No Maintenance Intended | Archived](http://unmaintained.tech/badge.svg)](https://gitHub.com/aahnik/REPO/graphs/commit-activity)
+[![Generic badge](https://img.shields.io/badge/tests-passing-<COLOR>.svg)](https://aahnik.github.io/)
+[![ MIT license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://aahnik.github.io/)
+
 **This is a simple program which does its work perfectly. Nothing more, nothing less**
 
 1. **Send dynamic emails with unlimited variables pulling data from a database(csv file)**
