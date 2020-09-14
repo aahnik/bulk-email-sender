@@ -1,5 +1,8 @@
 # AutoMailer
 Send Templatized Dynamic Emails Automatically 
+
+**This is a simple program which does its work perfectly. Nothing more, nothing less**
+
 1. **Send dynamic emails with unlimited variables pulling data from a database(csv file)**
 2. **Supports Markdown Formatting & embed links or images**
 3. **Supports Attaching any kind of files**
