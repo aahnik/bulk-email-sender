@@ -10,7 +10,7 @@ Send Templatized Dynamic Emails Automatically
 2. **Supports Markdown Formatting & embed links or images**
 3. **Supports Attaching any kind of files**
 
-_Version: **Stable-2.0**_ 
+_Version: **Stable-2.1**_ 
 
 [Click to see ScreenShots](https://github.com/aahnik/AutoMailer/blob/master/README.md#see-sample-screenshots)
 
