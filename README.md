@@ -36,7 +36,7 @@ This is a simple program which does its work perfectly. Nothing more, nothing le
 
 *You can Export CSV file from Microsoft Office Excel, Libre Office, Google Sheets, SQL Database, or NoSQL Database*
 
-- You you want to put any attachments , put them in the **`ATTACH` folder** inside the `autoMailerByAahnik` folder
+- You you want to put any attachments , put them in the **`ATTACH` folder** inside the `automailer` folder
 
 - Open **`creds.py`** file to set DISPLAY_NAME ,SENDER_EMAIL, PASSWORD
 
