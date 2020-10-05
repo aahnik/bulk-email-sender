@@ -3,57 +3,63 @@ Send Templatized Dynamic Emails Automatically
 
 [![Generic badge](https://img.shields.io/badge/tests-passing-<COLOR>.svg)](https://aahnik.github.io/)
 [![ MIT license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://aahnik.github.io/)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/aahnik/AutoMailer)
 
-**This is a simple program which does its work perfectly. Nothing more, nothing less**
+This is a simple program which does its work perfectly. Nothing more, nothing less
 
-1. **Send dynamic emails with unlimited variables pulling data from a database(csv file)**
-2. **Supports Markdown Formatting & embed links or images**
-3. **Supports Attaching any kind of files**
+1. Send dynamic emails with unlimited variables pulling data from a database(csv file)
+2. Supports Markdown Formatting & embed links or images
+3. Supports Attaching any kind of files
 
-_Version: **Stable-2.1**_ 
+[See ScreenShots](/screenshots.md)
 
-[Click to see ScreenShots](/screenshots.md)
+---
 
-## STEP WISE USAGE GUIDE
-1. Download or Clone the repo
 
-2. Open the **Automailer Folder** >> Read LICENCE >> open the folder **automailer**
+### Step Wise Usage Guide
 
-3. Write your email inside **`compose.md`** (supports markdown formatting)
+- Download or Clone the repo
 
-4. You can use **variables** , **prefix** them with **$** sign.
+- Open the `Automailer` Folder >> Read LICENCE >> open the folder **automailer**
 
-  Example:
-> Hi $NAME , you have Bill Rs. $price due for $months
+- Write your email inside **`compose.md`** (supports markdown formatting)
 
-5. Put your data inside **`data.csv`** file
+- You can use **variables** , prefix them with `$` sign.
 
-  Example: 
-**the line 1 ie headers must contain 'EMAIL' (uppercase) parameter**
+  > Hi $NAME , you have Bill Rs. $price due for $months
 
-            DISCLAIMER: (just random example data)
-            
+- Put your data inside **`data.csv`** file
+
+*The line 1 ie headers must contain 'EMAIL' (uppercase) parameter*
 
 ![image of csv](csv_image.png)
 
+*You can Export CSV file from Microsoft Office Excel, Libre Office, Google Sheets, SQL Database, or NoSQL Database*
 
-..... you can add as many lines as you wish 
+- You you want to put any attachments , put them in the **`ATTACH` folder** inside the `autoMailerByAahnik` folder
 
-**You can Export CSV file from Microsoft Office Excel, Libre Office, Google Sheets, SQL Database, or NoSQL Database** [See How]()
+- Open **`creds.py`** file to set DISPLAY_NAME ,SENDER_EMAIL, PASSWORD
 
-6. You you want to put any attachments , put them in the **`ATTACH` folder** inside the `autoMailerByAahnik` folder
 
-7. Open **`creds.py`** file to set DISPLAY_NAME ,SENDER_EMAIL, PASSWORD
+---
 
-> ### do not use original email password. Create a seperate Email Account then turn on 2 step Verification, and then set up an APP PASSWORD
+Note:
 
-👆 [See How to do]( )
+**Do not use original email password.** 
+
+Create a seperate Gmail Account then turn on 2 step Verification, and then set up an [App Password](https://support.google.com/accounts/answer/185833?hl=en)
+
+---
+
   
-## All set up 👍 you are now READY TO GO . RUN the `sender.py` file 
+- All set up 👍 you are now READY TO GO . RUN the `sender.py` file 
 
-You will be asked to confirm the attachments in `ATTACH` folder. Upon confirmation , the application will start sending Emails 
-## You will recieve a full success report after emails are sent
+- You will be asked to confirm the attachments in `ATTACH` folder. Upon confirmation , the application will start sending Emails 
 
-**Having Issues? Errors while Running in your Computer ? Difficulty setting up ?**
-Create an Issue in this GitHub repo
+- You will recieve a full success report after emails are sent
+
+**Having Issues?**
+
+Errors while Running in your Computer ? Difficulty setting up ?
+[Create an Issue](https://github.com/aahnik/AutoMailer/issues/new) in this GitHub repo describing your problem.
  
