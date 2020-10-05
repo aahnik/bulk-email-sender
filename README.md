@@ -1,7 +1,6 @@
 # AutoMailer
 Send Templatized Dynamic Emails Automatically 
 
-[![No Maintenance Intended | Archived](http://unmaintained.tech/badge.svg)](https://gitHub.com/aahnik/REPO/graphs/commit-activity)
 [![Generic badge](https://img.shields.io/badge/tests-passing-<COLOR>.svg)](https://aahnik.github.io/)
 [![ MIT license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://aahnik.github.io/)
 
@@ -18,7 +17,7 @@ _Version: **Stable-2.0**_
 ## STEP WISE USAGE GUIDE
 1. Download or Clone the repo
 
-2. Open the **Automailer Folder** >> Read LICENCE >> open the folder **autoMailerByAahnik**
+2. Open the **Automailer Folder** >> Read LICENCE >> open the folder **automailer**
 
 3. Write your email inside **`compose.md`** (supports markdown formatting)
 
@@ -56,11 +55,10 @@ You will be asked to confirm the attachments in `ATTACH` folder. Upon confirmati
 ## You will recieve a full success report after emails are sent
 
 **Having Issues? Errors while Running in your Computer ? Difficulty setting up ?**
-Get Premium Support from the creator of AutoMailer for Free Forever
+Create an Issue in this GitHub repo
  
-[Chat on Telegram](https://t.me/AahnikDaw)
 
-[Chat on WhatsApp](https://wa.me/message/G3FPHWJ3HK4FH1)
+
 
 
 # SEE SAMPLE SCREENSHOTS

@@ -17,11 +17,16 @@ con = ssl.create_default_context()
 template = extract.template
 filenames, attachments = extract.confirm_attachments()
 
-count = 0
+sent_count = 0
+try_count = 0
 with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
-    server.login(sender_address, auth_code)
 
     for receiver_address, message in extract.get_dynamic_from_template('data.csv', template):
+
+        if try_count % 40 == 0:
+            # Login agian after sending every 40 tries
+            # Prevent timeout
+            server.login(sender_address, auth_code)
 
         sent = True
         multipart_msg = MIMEMultipart("alternative")
@@ -51,6 +56,7 @@ with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
 
         # input("PRESS ENTER TO SEND THIS MESSAGE ")
         try:
+            try_count += 1
             server.sendmail(sender_address, receiver_address,
                             multipart_msg.as_string())
         except Exception as e:
@@ -62,11 +68,11 @@ with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
         finally:
             if sent:
                 print(f"Successfully sent email to {receiver_address}")
-                count += 1
+                sent_count += 1
             else:
                 print(f"Failed to  send email to {receiver_address}")
 
-    print(f" sent {count} emails")
+    print(f" sent {sent_count} emails")
 
 
 # AAHNIK 2020
