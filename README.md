@@ -12,7 +12,7 @@ Send Templatized Dynamic Emails Automatically
 
 _Version: **Stable-2.1**_ 
 
-[Click to see ScreenShots](https://github.com/aahnik/AutoMailer/blob/master/README.md#see-sample-screenshots)
+[Click to see ScreenShots](/screenshots.md)
 
 ## STEP WISE USAGE GUIDE
 1. Download or Clone the repo
@@ -57,27 +57,3 @@ You will be asked to confirm the attachments in `ATTACH` folder. Upon confirmati
 **Having Issues? Errors while Running in your Computer ? Difficulty setting up ?**
 Create an Issue in this GitHub repo
  
-
-
-
-
-# SEE SAMPLE SCREENSHOTS
-
-
-![THIS IS How it appears to receiver on Desktop Mode in Web](autoMailerByAahnik/sample_screenshots/pc_scrnsht1.png)
-
-
-##### EMAILS SENT THROUGH AUTOMAILER ARE ENCRYPTED AND THEY REACH THE PRIMARY INBOX OF RECEIPIENTS 
-
-##### THEY _DO NOT_ END UP IN SPAM FOLDERS
-
-![THIS IS How it looks like to the receiver after Clicking on the Email in Web Desktop Mode](autoMailerByAahnik/sample_screenshots/pc_scrnsht2.png)
-![All Attachments are securely and succesfully attached to the Email](autoMailerByAahnik/sample_screenshots/pc_scrnsht3.png)
-![IT APPEARS GREAT ON THE GMAIL APP ON SMARTPHONES](autoMailerByAahnik/sample_screenshots/phn_scrnsht1.png)
-
-![IT OPENS NEAT AFTER CLICKING ON THE EMAIL ](autoMailerByAahnik/sample_screenshots/phn_scrnsht2.png)
-![ THIS IS HOW THE BODY OF THE EMAIL LOOKS IN PHONE](autoMailerByAahnik/sample_screenshots/phn_scrnsht3.png) 
-![ATTACHMENTS APPEAR COOL IN SMARTPHONE TOO](autoMailerByAahnik/sample_screenshots/phn_scrnsht4.png)
-
-### MADE IN INDIA
-(C) AAHNIK DAW 2020 
