@@ -19,8 +19,14 @@ This is a simple program which does its work perfectly. Nothing more, nothing le
 
 ## Usage
 
+- Make sure you have Python installed in your system.
+  
 - Download or Clone the repo and then move into the `automailer` directory.
 
+- Install all dependancies:
+  ```shell
+  pip install -r requirements.txt
+  ```
 - Write your email inside **`compose.md`** (supports markdown formatting)
 
 - You can use **variables** , prefix them with `$` sign.
@@ -52,7 +58,7 @@ This is a simple program which does its work perfectly. Nothing more, nothing le
   Create Gmail Account then turn on 2 step Verification, and then set up an [App Password](https://support.google.com/accounts/answer/185833?hl=en) for automailer.
 
 
-- All set up 👍 you are now READY TO GO . RUN the `sender.py` file 
+- All set up 👍 you are now READY TO GO . Run the `send.py` file 
 
 - You will be asked to confirm the attachments in the `ATTACH` folder. Upon confirmation , the application will start sending Emails 
 
