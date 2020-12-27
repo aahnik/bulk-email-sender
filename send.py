@@ -1,4 +1,3 @@
-import setup    # module written by AAHNIK 2020
 import extract    # module written by AAHNIK 2020
 import smtplib
 import ssl
