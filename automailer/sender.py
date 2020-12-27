@@ -12,7 +12,7 @@ import os
 
 sender_address, auth_code = extract.read_creds()
 smtp_server = "smtp.gmail.com"
-port = 587  # for SSL
+port = 587  # TLS replaced SSL in 1999.
 con = ssl.create_default_context()
 template = extract.template
 filenames, attachments = extract.confirm_attachments()
