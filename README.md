@@ -14,16 +14,12 @@ This is a simple program which does its work perfectly. Nothing more, nothing le
 2. Supports Markdown Formatting & embed links or images
 3. Supports Attaching any kind of files
 
-[See ScreenShots](/screenshots.md)
-
----
+[See Screenshots](https://github.com/aahnik/AutoMailer/issues/8)
 
 
-## Step Wise Usage Guide
+## Usage
 
-- Download or Clone the repo
-
-- Open the `Automailer` Folder >> Read LICENCE >> open the folder **automailer**
+- Download or Clone the repo and then move into the `automailer` directory.
 
 - Write your email inside **`compose.md`** (supports markdown formatting)
 
@@ -31,39 +27,37 @@ This is a simple program which does its work perfectly. Nothing more, nothing le
 
   > Hi $NAME , you have Bill Rs. $price due for $months
 
-- Put your data inside **`data.csv`** file
+- Put your data inside `data.csv` file
 
-*The line 1 ie headers must contain 'EMAIL' (uppercase) parameter*
-
-
-![csv_image](https://user-images.githubusercontent.com/66209958/103172846-715d0c00-487c-11eb-9419-9dceb4297e49.png)
-
-*You can Export CSV file from Microsoft Office Excel, Libre Office, Google Sheets, SQL Database, or NoSQL Database*
-
-- You you want to put any attachments , put them in the **`ATTACH` folder** inside the `automailer` folder
-
-- Open **`creds.py`** file to set DISPLAY_NAME ,SENDER_EMAIL, PASSWORD
+  *The line 1 ie headers must contain 'EMAIL' (uppercase) parameter*
 
 
----
+  ![csv_image](https://user-images.githubusercontent.com/66209958/103172846-715d0c00-487c-11eb-9419-9dceb4297e49.png)
 
-Note:
+  *You can Export CSV file from Microsoft Office Excel, Libre Office, Google Sheets, SQL Database, or NoSQL Database*
 
-**Do not use original email password.** 
+- You you want to put any attachments , put them in the **`ATTACH` folder** .
 
-Create a seperate Gmail Account then turn on 2 step Verification, and then set up an [App Password](https://support.google.com/accounts/answer/185833?hl=en)
+- Create a file `.env` and put the following into it
 
----
+  ```text
+  display_name=Mr.Bean
+  sender_email=your@example.com
+  password=12345
+  ```
+  Make sure to put real values, the above values are just an example.
 
-  
+- **Do not put original email password.** 
+
+  Create Gmail Account then turn on 2 step Verification, and then set up an [App Password](https://support.google.com/accounts/answer/185833?hl=en) for automailer.
+
+
 - All set up 👍 you are now READY TO GO . RUN the `sender.py` file 
 
-- You will be asked to confirm the attachments in `ATTACH` folder. Upon confirmation , the application will start sending Emails 
+- You will be asked to confirm the attachments in the `ATTACH` folder. Upon confirmation , the application will start sending Emails 
 
-- You will recieve a full success report after emails are sent
+- You will receive a full success report after emails are sent
 
-**Having Issues?**
+## Getting Help
 
-Errors while Running in your Computer ? Difficulty setting up ?
-[Create an Issue](https://github.com/aahnik/AutoMailer/issues/new) in this GitHub repo describing your problem.
- 
+Please report an issue or ask your question in the issues section of the repository.
