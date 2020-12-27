@@ -1,4 +1,4 @@
-import extract    # module written by AAHNIK 2020
+import extract
 import smtplib
 import ssl
 import markdown
@@ -36,8 +36,6 @@ with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
 
         text = message
         html = markdown.markdown(text)
-        # with open('compose.html', 'w+') as html_file:
-        #     html_file.write(html)
 
         part1 = MIMEText(text, "plain")
         part2 = MIMEText(html, "html")
@@ -53,16 +51,13 @@ with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
                                    f"attachment; filename= {filename}")
             multipart_msg.attach(attach_part)
 
-        # input("PRESS ENTER TO SEND THIS MESSAGE ")
         try:
             try_count += 1
             server.sendmail(sender_address, receiver_address,
                             multipart_msg.as_string())
-        except Exception as e:
+        except Exception as err:
             sent = False
-            # print(
-            #     f"some error occured while sending email to {receiver_address} ")
-            print(e)
+            print(err)
             input("PRESS ENTER TO CONTINUE")
         finally:
             if sent:
@@ -71,7 +66,7 @@ with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
             else:
                 print(f"Failed to  send email to {receiver_address}")
 
-    print(f" sent {sent_count} emails")
+    print(f"sent {sent_count} emails")
 
 
 # AAHNIK 2020
