@@ -5,6 +5,9 @@ Send Templatized Dynamic Emails Automatically
 [![ MIT license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://aahnik.github.io/)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/aahnik/AutoMailer)
 
+
+## Features 
+
 This is a simple program which does its work perfectly. Nothing more, nothing less
 
 1. Send dynamic emails with unlimited variables pulling data from a database(csv file)
@@ -16,7 +19,7 @@ This is a simple program which does its work perfectly. Nothing more, nothing le
 ---
 
 
-### Step Wise Usage Guide
+## Step Wise Usage Guide
 
 - Download or Clone the repo
 
