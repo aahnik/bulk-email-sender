@@ -12,7 +12,7 @@ import os
 
 sender_address, auth_code = extract.read_creds()
 smtp_server = "smtp.gmail.com"
-port = 465  # for SSL
+port = 587  # for SSL
 con = ssl.create_default_context()
 template = extract.template
 filenames, attachments = extract.confirm_attachments()
