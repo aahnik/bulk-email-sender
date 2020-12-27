@@ -39,7 +39,7 @@ def confirm_attachments():
                     content = f.read()
                 file_contents.append(content)
 
-        return {'names': [file_names], 'contents': file_contents}
+        return {'names': file_names, 'contents': file_contents}
     except FileNotFoundError:
         print('No ATTACH directory found...')
 
