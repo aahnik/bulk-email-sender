@@ -1,4 +1,5 @@
-# AutoMailer
+# bulk-email-sender
+
 Send Templatized Dynamic Emails Automatically 
 
 [![Generic badge](https://img.shields.io/badge/tests-passing-<COLOR>.svg)](https://aahnik.github.io/)
