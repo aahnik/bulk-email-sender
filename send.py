@@ -1,38 +1,61 @@
-import extract
-import smtplib
-import ssl
+import csv
+import os
+from settings import SENDER_EMAIL, PASSWORD, DISPLAY_NAME
+from smtplib import SMTP
 import markdown
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
-
 from email import encoders
-import os
 
-sender_address, auth_code = extract.read_creds()
-smtp_server = "smtp.gmail.com"
-port = 587  # TLS replaced SSL in 1999.
-con = ssl.create_default_context()
-template = extract.template
-filenames, attachments = extract.confirm_attachments()
 
-sent_count = 0
-try_count = 0
-with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
+def get_msg(csv_file_path, template):
+    with open(csv_file_path, 'r') as file:
+        headers = file.readline().split(',')
+        headers[len(headers) - 1] = headers[len(headers) - 1][:-1]
+    # i am opening the csv file two times above and below INTENTIONALLY, changing will cause error
+    with open(csv_file_path, 'r') as file:
+        data = csv.DictReader(file)
+        for row in data:
+            required_string = template
+            for header in headers:
+                value = row[header]
+                required_string = required_string.replace(f'${header}', value)
+            yield row['EMAIL'], required_string
 
-    for receiver_address, message in extract.get_dynamic_from_template('data.csv', template):
 
-        if try_count % 40 == 0:
-            # Login agian after sending every 40 tries
-            # Prevent timeout
-            server.login(sender_address, auth_code)
+def confirm_attachments():
+    file_contents = []
+    file_names = []
+    try:
+        for filename in os.listdir('ATTACH'):
 
-        sent = True
+            entry = input(f"""TYPE IN 'Y' AND PRESS ENTER IF YOU CONFIRM T0 ATTACH {filename} 
+                                    TO SKIP PRESS ENTER: """)
+            confirmed = True if entry == 'Y' else False
+            if confirmed:
+                file_names.append(filename)
+                with open(f'{os.getcwd()}/ATTACH/{filename}', "rb") as f:
+                    content = f.read()
+                file_contents.append(content)
+
+        return {'names': [file_names], 'contents': file_contents}
+    except FileNotFoundError:
+        print('No ATTACH directory found...')
+
+
+def send_emails(server: SMTP, template):
+
+    attachments = confirm_attachments()
+    sent_count = 0
+
+    for receiver, message in get_msg('data.csv', template):
+
         multipart_msg = MIMEMultipart("alternative")
 
         multipart_msg["Subject"] = message.splitlines()[0]
-        multipart_msg["From"] = extract.sender_name
-        multipart_msg["To"] = receiver_address
+        multipart_msg["From"] = DISPLAY_NAME
+        multipart_msg["To"] = receiver
 
         text = message
         html = markdown.markdown(text)
@@ -43,30 +66,45 @@ with smtplib.SMTP_SSL(smtp_server, port, context=con) as server:
         multipart_msg.attach(part1)
         multipart_msg.attach(part2)
 
-        for attachment, filename in zip(attachments, filenames):
-            attach_part = MIMEBase('application', 'octet-stream')
-            attach_part.set_payload((attachment).read())
-            encoders.encode_base64(attach_part)
-            attach_part.add_header('Content-Disposition',
-                                   f"attachment; filename= {filename}")
-            multipart_msg.attach(attach_part)
+        if attachments:
+            for content, name in zip(attachments['contents'], attachments['names']):
+                attach_part = MIMEBase('application', 'octet-stream')
+                attach_part.set_payload(content)
+                encoders.encode_base64(attach_part)
+                attach_part.add_header('Content-Disposition',
+                                       f"attachment; filename={name}")
+                multipart_msg.attach(attach_part)
 
         try:
-            try_count += 1
-            server.sendmail(sender_address, receiver_address,
+            server.sendmail(SENDER_EMAIL, receiver,
                             multipart_msg.as_string())
         except Exception as err:
-            sent = False
+            print(f'Problem occurend while sending to {receiver} ')
             print(err)
             input("PRESS ENTER TO CONTINUE")
-        finally:
-            if sent:
-                print(f"Successfully sent email to {receiver_address}")
-                sent_count += 1
-            else:
-                print(f"Failed to  send email to {receiver_address}")
+        else:
+            sent_count += 1
 
-    print(f"sent {sent_count} emails")
+    print(f"Sent {sent_count} emails")
+
+
+if __name__ == "__main__":
+    host = "smtp.gmail.com"
+    port = 587  # TLS replaced SSL in 1999
+
+    with open('compose.md') as f:
+        template = f.read()
+
+    server = SMTP(host=host, port=port)
+    server.connect(host=host, port=port)
+    server.ehlo()
+    server.starttls()
+    server.ehlo()
+    server.login(user=SENDER_EMAIL, password=PASSWORD)
+
+    send_emails(server, template)
+
+    server.quit()
 
 
 # AAHNIK 2020
