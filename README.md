@@ -35,7 +35,8 @@ This is a simple program which does its work perfectly. Nothing more, nothing le
 
 *The line 1 ie headers must contain 'EMAIL' (uppercase) parameter*
 
-![image of csv](csv_image.png)
+
+![csv_image](https://user-images.githubusercontent.com/66209958/103172846-715d0c00-487c-11eb-9419-9dceb4297e49.png)
 
 *You can Export CSV file from Microsoft Office Excel, Libre Office, Google Sheets, SQL Database, or NoSQL Database*
 
