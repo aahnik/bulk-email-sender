@@ -2,10 +2,6 @@
 
 Send Templatized Dynamic Emails Automatically 
 
-[![Generic badge](https://img.shields.io/badge/tests-passing-<COLOR>.svg)](https://aahnik.github.io/)
-[![ MIT license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://aahnik.github.io/)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/aahnik/AutoMailer)
-
 ## Features 
 
 This is a simple program which does its work perfectly. Nothing more, nothing less
