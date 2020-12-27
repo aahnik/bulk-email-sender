@@ -1,5 +1,17 @@
-DISPLAY_NAME = ''
+import os
+from dotenv import load_dotenv
 
-SENDER_EMAIL = ''
+load_dotenv()
 
-PASSWORD = ''
+DISPLAY_NAME = os.getenv('display_name')
+SENDER_EMAIL = os.getenv('sender_email')
+PASSWORD = os.getenv('password')
+
+try:
+    assert DISPLAY_NAME
+    assert SENDER_EMAIL
+    assert PASSWORD
+except AssertionError:
+    print('Please set up credentials. Read https://github.com/aahnik/automailer#usage')
+else:
+    print('Credentials loaded successfully')
