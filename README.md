@@ -1,5 +1,5 @@
 # bulk-email-sender
-[![promoted](https://raw.githubusercontent.com/aahnik/aahnik/master/promoted/general.gif)](https://aahnik.github.io/aahnik/promoted/general.html)
+
 
 Send Templatized Dynamic Emails Automatically 
 
