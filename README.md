@@ -1,9 +1,13 @@
 # bulk-email-sender
 
 
-Send Templatized Dynamic Emails Automatically 
+Send Templatized Dynamic Emails Automatically
 
-## Features 
+## What's New
+
+- You can send html mails. Just write `compose.html`.
+
+## Features
 
 This is a simple program which does its work perfectly. Nothing more, nothing less
 
@@ -41,7 +45,7 @@ This is a simple program which does its work perfectly. Nothing more, nothing le
   password=12345
   ```
   Make sure to put real values, the above values are just an example.
-- **Do not put original email password.** 
+- **Do not put original email password.**
   Create Gmail Account then turn on 2 step Verification, and then set up an [App Password](https://support.google.com/accounts/answer/185833?hl=en) for `automailer`.
 - All set up 👍 you are now READY TO GO . Run the `send.py` file:
   ```shell
